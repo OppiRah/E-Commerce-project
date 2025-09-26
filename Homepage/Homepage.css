@@ -155,6 +155,24 @@
             font-weight: 600;
         }
         
+        /* MOBILE HAMBURGER MENU */
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: 2px solid #BB86FC;
+            color: #BB86FC;
+            padding: 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-toggle:hover {
+            background: #BB86FC;
+            color: #121212;
+        }
+
         /* NAVIGATION */
         .navigation {
             background: rgba(31, 27, 36, 0.3);
