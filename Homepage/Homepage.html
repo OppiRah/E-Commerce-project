@@ -13,9 +13,10 @@
         <div class="container">
             <!-- Top header with logo, search, and user actions -->
             <div class="header-top">
-                <a href="#" class="logo">BuyMangasPH</a>
+                <div class="header-top-row">
+                    <a href="#" class="logo">BuyMangasPH</a>
 
-                <!-- Mobile hamburger menu -->
+                    <!-- Mobile hamburger menu -->
                     <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
                         ☰
                     </button>
@@ -35,8 +36,9 @@
                     <input type="text" class="search-bar" placeholder="Search for manga, manhwa, manhua...">
                     <button class="search-btn">⚡</button>
                 </div>
+            </div>
 
-                <!-- Navigation Menu -->
+            <!-- Navigation Menu -->
             <nav class="navigation" id="mobileNav">
                 <ul class="nav-menu">
                     <li class="nav-item active">Home</li>
@@ -354,6 +356,7 @@
                     </ul>
                 </div>
                 <div class="footer-section">
+                    <div class="footer-section">
                     <h4>Customer Service</h4>
                     <ul class="footer-links">
                         <li><a href="#">Shipping Info</a></li>
@@ -583,6 +586,62 @@
             }
         });
         
+// Mobile menu toggle functionality
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mobileNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            nav.classList.toggle('mobile-active');
+            
+            // Update hamburger icon
+            if (nav.classList.contains('mobile-active')) {
+                toggle.innerHTML = '✕';
+                toggle.style.transform = 'rotate(90deg)';
+            } else {
+                toggle.innerHTML = '☰';
+                toggle.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // Close mobile menu when clicking on a nav item
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    toggleMobileMenu();
+                }
+                
+                // Remove active class from all items
+                document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                // Add active class to clicked item
+                this.classList.add('active');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('mobileNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const header = document.querySelector('.header');
+            
+            if (!header.contains(event.target) && nav.classList.contains('mobile-active')) {
+                toggleMobileMenu();
+            }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const nav = document.getElementById('mobileNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (window.innerWidth > 768 && nav.classList.contains('mobile-active')) {
+                nav.classList.remove('mobile-active');
+                toggle.innerHTML = '☰';
+                toggle.style.transform = 'rotate(0deg)';
+            }
+        });
+        
+        // EXISTING FUNCTIONALITY
+
         // Navigation active state
         const navItems = document.querySelectorAll('.nav-item');
         navItems.forEach(item => {
