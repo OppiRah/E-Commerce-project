@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MangaVerse - Your Ultimate Manga Store</title>
+    <link rel="stylesheet" href="Homepage.css"></link>
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <div class="container">
+            <!-- Top header with logo, search, and user actions -->
+            <div class="header-top">
+                <a href="#" class="logo">BuyMangasPH</a>
+                
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-bar" placeholder="Search for manga, manhwa, manhua...">
+                    <button class="search-btn">⚡</button>
+                </div>
+                
+                <div class="user-actions">
+                    <a href="#" class="user-btn">
+                        👤 Login
+                    </a>
+                    <a href="#" class="cart-btn">
+                        🛒 Cart <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    <li class="nav-item active">Home</li>
+                    <li class="nav-item">Browse</li>
+                    <li class="nav-item">Genres</li>
+                    <li class="nav-item">Sale</li>
+                    <li class="nav-item">About</li>
+                    <li class="nav-item">Contact</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <!-- Hero Banner Section with Carousel -->
+        <section class="hero-banner">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="Images/Carousel/carousel1.webp" alt="Manga Collection Hero" class="carousel-slide-image" onerror="this.style.display='none'">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Discover Amazing Stories</h1>
+                            <p class="hero-subtitle">Explore thousands of manga from Japan's finest creators</p>
+                            <button class="hero-btn">Shop Manga</button>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/Carousel/carouselmanhwa.jpg" alt="Manhwa Collection Hero" class="carousel-slide-image" onerror="this.style.display='none'">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Epic Manhwa Adventures</h1>
+                            <p class="hero-subtitle">Dive into Korean webtoons with stunning full-color art</p>
+                            <button class="hero-btn">Explore Manhwa</button>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/Carousel/carouselmanhua.jpg" alt="Manhua Collection Hero" class="carousel-slide-image" onerror="this.style.display='none'">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Chinese Legends Await</h1>
+                            <p class="hero-subtitle">Experience the rich storytelling of Chinese manhua</p>
+                            <button class="hero-btn">Browse Manhua</button>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/Carousel/carousellatest.jpg" alt="New Releases Hero" class="carousel-slide-image" onerror="this.style.display='none'">
+                        <div class="hero-content">
+                            <h1 class="hero-title">New Releases Daily</h1>
+                            <p class="hero-subtitle">Stay updated with the latest chapters and volumes</p>
+                            <button class="hero-btn">View New Arrivals</button>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="Images/Carousel/carouselrare.jpg" alt="Special Collections Hero" class="carousel-slide-image" onerror="this.style.display='none'">
+                        <div class="hero-content">
+                            <h1 class="hero-title">Collector's Paradise</h1>
+                            <p class="hero-subtitle">Find rare editions and exclusive merchandise</p>
+                            <button class="hero-btn">Special Collections</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Navigation -->
+                <button class="carousel-arrow prev">❮</button>
+                <button class="carousel-arrow next">❯</button>
+                
+                <div class="carousel-nav">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                    <span class="carousel-dot" data-slide="3"></span>
+                    <span class="carousel-dot" data-slide="4"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories Section -->
+        <section class="featured-section">
+            <h2 class="section-title">Featured Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card manga-category" style="--bg-image: url('Images/Featured/JP.jpg')">
+                    <div class="category-content">
+                        <div class="category-icon">🇯🇵</div>
+                        <h3 class="category-title">Popular Manga</h3>
+                        <p class="category-desc">Most read mangas of all time</p>
+                    </div>
+                </div>
+                <div class="category-card manhwa-category" style="--bg-image: url('Images/Featured/KR.jpg')">
+                    <div class="category-content">
+                        <div class="category-icon">🇰🇷</div>
+                        <h3 class="category-title">New Manhwa</h3>
+                        <p class="category-desc">Freshly made korean webtoons</p>
+                    </div>
+                </div>
+                <div class="category-card manhua-category" style="--bg-image: url('Images/Featured/CN.jpg')">
+                    <div class="category-content">
+                        <div class="category-icon">🇨🇳</div>
+                        <h3 class="category-title">Trending Manhua</h3>
+                        <p class="category-desc">Up-and-coming manhuas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section class="featured-section">
+            <h2 class="section-title">New Arrivals</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Images/NewArrivals/Manga/AttackOnTitan34.jpg" alt="Attack on Titan Volume 34" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Attack on Titan Vol. 34</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Attack on Titan Volume 34</h3>
+                        <div class="product-price">₱650.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(127 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Images/NewArrivals/Manga/MushokuTensei22.jpg" alt="Mushoku Tensei" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Mushoku Tensei Vol. 22</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mushoku Tensei Volume 22</h3>
+                        <div class="product-price">₱720.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(89 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Images/NewArrivals/Manga/BlackClover36.jpg" alt="Black Clover" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Black Clover Vol. 36</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Black Clover Volume 36</h3>
+                        <div class="product-price">₱580.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(203 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Images/NewArrivals/Manhua/TianGuanCiFu8.jpg" alt="Tian Guan Ci Fu" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Tian Guan Ci Fu Vol. 8</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tian Guan Ci Fu Volume 8</h3>
+                        <div class="product-price">₱695.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(156 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Images/NewArrivals/Manhwa/Eleceed14.jpg" alt="Eleceed" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Eleceed Vol. 14</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Eleceed Volume 14</h3>
+                        <div class="product-price">₱695.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(156 reviews)</span>
+                        </div>
+
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Images/NewArrivals/Manhua/LaBendicionDel.jpg" alt="LBD" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">La Bendicion Del Vol. 3</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">La Bendicion Del Volume 3</h3>
+                        <div class="product-price">₱695.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(156 reviews)</span>
+                        </div>
+                        
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- See More Button for New Arrivals -->
+            <div class="see-more-container">
+                <button class="see-more-btn" data-section="new-arrivals">
+                    See More New Arrivals
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Best Sellers Section -->
+        <section class="featured-section">
+            <h2 class="section-title">Best Sellers</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Images/BestSellers/OPM30.jpg" alt="One Punch Man Volume 30" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">One Punch Man Vol. 30</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">One Punch Man Volume 30</h3>
+                        <div class="product-price">₱620.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(334 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Images/BestSellers/JJK18.jpg" alt="Jujutsu Kaisen Volume 18" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Jujutsu Kaisen Vol. 18</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Jujutsu Kaisen Volume 18</h3>
+                        <div class="product-price">₱675.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(278 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Images/BestSellers/CM11.jpg" alt="Chainsaw Man Volume 11" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Chainsaw Man Vol. 11</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Chainsaw Man Volume 11</h3>
+                        <div class="product-price">₱590.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(192 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="Images/BestSellers/MHA37.jpg" alt="My Hero Academia Volume 37" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">My Hero Academia Vol. 37</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">My Hero Academia Volume 37</h3>
+                        <div class="product-price">₱640.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(245 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- See More Button for Best Sellers -->
+            <div class="see-more-container">
+                <button class="see-more-btn" data-section="best-sellers">
+                    See More Best Sellers
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Manga</a></li>
+                        <li><a href="#">Manhwa</a></li>
+                        <li><a href="#">Manhua</a></li>
+                        <li><a href="#">Light Novels</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">📘 Facebook</a></li>
+                        <li><a href="#">📷 Instagram</a></li>
+                        <li><a href="#">🐦 Twitter</a></li>
+                        <li><a href="#">📺 YouTube</a></li>
+                        <li><a href="#">📧 Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MangaVerse. All rights reserved. | Made with ❤️ for manga lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // CAROUSEL FUNCTIONALITY
+        class Carousel {
+            constructor() {
+                this.currentSlide = 0;
+                this.totalSlides = 5;
+                this.track = document.querySelector('.carousel-track');
+                this.dots = document.querySelectorAll('.carousel-dot');
+                this.prevBtn = document.querySelector('.carousel-arrow.prev');
+                this.nextBtn = document.querySelector('.carousel-arrow.next');
+                this.autoPlayInterval = null;
+                
+                this.init();
+            }
+            
+            init() {
+                // Add event listeners
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                this.prevBtn.addEventListener('click', () => this.previousSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                // Start autoplay
+                this.startAutoPlay();
+                
+                // Pause autoplay on hover
+                const carouselContainer = document.querySelector('.carousel-container');
+                carouselContainer.addEventListener('mouseenter', () => this.stopAutoPlay());
+                carouselContainer.addEventListener('mouseleave', () => this.startAutoPlay());
+                
+                // Touch/swipe support for mobile
+                this.addTouchSupport();
+            }
+            
+            goToSlide(index) {
+                this.currentSlide = index;
+                this.updateCarousel();
+            }
+            
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateCarousel();
+            }
+            
+            previousSlide() {
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.updateCarousel();
+            }
+            
+            updateCarousel() {
+                // Move the track
+                const translateX = -this.currentSlide * 20; // Each slide is 20% width
+                this.track.style.transform = `translateX(${translateX}%)`;
+                
+                // Update dots
+                this.dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+            }
+            
+            startAutoPlay() {
+                this.autoPlayInterval = setInterval(() => {
+                    this.nextSlide();
+                }, 5000); // Change slide every 5 seconds
+            }
+            
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                }
+            }
+            
+            addTouchSupport() {
+                const carousel = document.querySelector('.carousel-container');
+                let startX = 0;
+                let endX = 0;
+                
+                carousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+                
+                carousel.addEventListener('touchmove', (e) => {
+                    e.preventDefault(); // Prevent scrolling
+                });
+                
+                carousel.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    const diffX = startX - endX;
+                    
+                    // Swipe threshold
+                    if (Math.abs(diffX) > 50) {
+                        if (diffX > 0) {
+                            this.nextSlide();
+                        } else {
+                            this.previousSlide();
+                        }
+                    }
+                });
+            }
+        }
+        
+        // EXISTING FUNCTIONALITY
+        
+        // Cart counter functionality
+        let cartCount = 0;
+        const cartCountElement = document.querySelector('.cart-count');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        // Add event listeners to all "Add to Cart" buttons
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                cartCount++;
+                cartCountElement.textContent = cartCount;
+                
+                // Visual feedback
+                button.style.transform = 'scale(0.95)';
+                button.textContent = 'Added!';
+                button.style.background = '#28a745';
+                
+                // Reset button after 1 second
+                setTimeout(() => {
+                    button.style.transform = 'scale(1)';
+                    button.textContent = 'Add to Cart';
+                    button.style.background = 'linear-gradient(45deg, #BB86FC, #03DAC6)';
+                }, 1000);
+            });
+        });
+        
+        // Search functionality
+        const searchBar = document.querySelector('.search-bar');
+        const searchBtn = document.querySelector('.search-btn');
+        
+        function performSearch() {
+            const query = searchBar.value.trim();
+            if (query) {
+                alert(`Searching for: "${query}"`);
+                // In real implementation, this would redirect to search results page
+            }
+        }
+        
+        searchBtn.addEventListener('click', performSearch);
+        searchBar.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // Navigation active state
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                navItems.forEach(nav => nav.classList.remove('active'));
+                // Add active class to clicked item
+                this.classList.add('active');
+            });
+        });
+        
+        // Category card click functionality
+        const categoryCards = document.querySelectorAll('.category-card');
+        categoryCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('.category-title').textContent;
+                alert(`Navigating to ${title} section...`);
+                // In real implementation, this would redirect to category page
+            });
+        });
+        
+        // Hero button functionality - updated to work with carousel
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('hero-btn')) {
+                document.querySelector('.featured-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+        
+        // Product card hover effects
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const title = this.querySelector('.product-title').textContent;
+                alert(`Opening ${title} details...`);
+                // In real implementation, this would redirect to product detail page
+            });
+        });
+        
+        // User authentication buttons
+        const loginBtn = document.querySelector('.user-btn');
+        loginBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Opening login modal...');
+            // In real implementation, this would open login/register modal
+        });
+        
+        // Cart button functionality
+        const cartBtn = document.querySelector('.cart-btn');
+        cartBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Opening shopping cart...');
+            // In real implementation, this would open cart sidebar or page
+        });
+        
+        // Logo click functionality
+        const logo = document.querySelector('.logo');
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // See More button functionality
+        const seeMoreButtons = document.querySelectorAll('.see-more-btn');
+        seeMoreButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const section = this.dataset.section;
+                
+                // Visual feedback
+                this.style.transform = 'scale(0.95)';
+                
+                // Reset after animation
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+                
+                if (section === 'new-arrivals') {
+                    alert('Redirecting to New Arrivals page with all available products...');
+                    // In real implementation: window.location.href = '/new-arrivals';
+                } else if (section === 'best-sellers') {
+                    alert('Redirecting to Best Sellers page with all available products...');
+                    // In real implementation: window.location.href = '/best-sellers';
+                }
+            });
+        });
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize carousel
+            new Carousel();
+            
+            // Add fade-in animation to elements as they come into view
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all product and category cards
+            document.querySelectorAll('.product-card, .category-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
