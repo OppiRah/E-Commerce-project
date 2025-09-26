@@ -97,7 +97,7 @@
         
         .search-btn {
             position: absolute;
-            right: 5px;
+            left: 8px;
             top: 50%;
             transform: translateY(-50%);
             background: linear-gradient(45deg, #BB86FC, #03DAC6);
