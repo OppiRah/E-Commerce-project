@@ -386,7 +386,7 @@
 
         // Header scroll behavior
         let lastScrollTop = 0;
-        let scrollThreshold = 100; // Hide header after scrolling down 100px
+        let scrollThreshold = 50; // Hide header after scrolling down 100px
 
         window.addEventListener('scroll', function() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -413,7 +413,6 @@
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
         });
         
-
 
 
         // CAROUSEL FUNCTIONALITY
