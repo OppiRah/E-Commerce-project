@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - BuyMangasPH</title>
+    <link rel="stylesheet" href="AboutUs.css">
+</head>
+<body>
+    <!-- HEADER SECTION (Same as other pages) -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="header-top-row">
+                    <a href="Homepage.html" class="logo">BuyMangasPH</a>
+                    
+                    <div class="user-actions">
+                        <a href="#" class="user-btn">👤 Login</a>
+                        <a href="#" class="cart-btn">🛒 Cart <span class="cart-count">0</span></a>
+                    </div>
+                </div>
+
+                <div class="search-container">
+                    <button class="search-btn">🔍</button>
+                    <input type="text" class="search-bar" placeholder="Search for manga, manhwa, manhua...">
+                </div>
+            </div>
+
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+
+            <nav class="navigation" id="mobileNav">
+                <ul class="nav-menu">
+                    <li><a href="Homepage.html" class="nav-item">Home</a></li>
+                    <li><a href="Browse.html" class="nav-item">Browse</a></li>
+                    <li><a href="About Us.html" class="nav-item active">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="Homepage.html">Home</a></li>
+                <li class="breadcrumb-separator">></li>
+                <li class="breadcrumb-item active">About Us</li>
+            </ul>
+        </nav>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-content">
+                <h1 class="page-title">About BuyMangasPH</h1>
+                <p class="page-subtitle">Your trusted partner for East Asian comics in the Philippines</p>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="about-content">
+            <div class="content-grid">
+                <!-- Our Story -->
+                <div class="content-card">
+                    <div class="card-icon">📚</div>
+                    <h2 class="card-title">Our Story</h2>
+                    <p class="card-text">
+                        Founded in 2024, BuyMangasPH was born from a passion for bringing the best of East Asian storytelling to Filipino readers. We recognized the growing demand for authentic manga, manhwa, and manhua in the Philippines and set out to create a platform that celebrates these incredible art forms.
+                    </p>
+                    <p class="card-text">
+                        What started as a small collection has grown into the Philippines' premier destination for East Asian comics, serving thousands of readers nationwide.
+                    </p>
+                </div>
+
+                <!-- Our Mission -->
+                <div class="content-card">
+                    <div class="card-icon">🎯</div>
+                    <h2 class="card-title">Our Mission</h2>
+                    <p class="card-text">
+                        To make authentic East Asian comics accessible to every Filipino reader, fostering a vibrant community that appreciates diverse storytelling traditions from Japan, Korea, and China.
+                    </p>
+                    <p class="card-text">
+                        We believe in the power of stories to connect cultures, inspire imagination, and bring people together through shared experiences.
+                    </p>
+                </div>
+
+                <!-- Why Choose Us -->
+                <div class="content-card">
+                    <div class="card-icon">⭐</div>
+                    <h2 class="card-title">Why Choose Us</h2>
+                    <ul class="feature-list">
+                        <li>Authentic imports from Japan, Korea, and China</li>
+                        <li>Competitive pricing with regular promotions</li>
+                        <li>Fast and secure shipping nationwide</li>
+                        <li>Carefully curated collection of quality titles</li>
+                        <li>Dedicated customer support team</li>
+                        <li>Community-driven recommendations</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3>Email Us</h3>
+                        <p>support@buymangasph.com</p>
+                        <p>orders@buymangasph.com</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>Call Us</h3>
+                        <p>(+63) 917-123-4567</p>
+                        <p>Mon-Fri: 9AM-6PM</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Visit Us</h3>
+                        <p>123 Manga Street</p>
+                        <p>Makati City, Metro Manila</p>
+                        <p>Philippines 1200</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">🕒</div>
+                        <h3>Store Hours</h3>
+                        <p>Monday - Friday: 10AM-8PM</p>
+                        <p>Saturday: 10AM-6PM</p>
+                        <p>Sunday: 12PM-5PM</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h3 class="form-title">Send Us a Message</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic...</option>
+                                <option value="order">Order Inquiry</option>
+                                <option value="product">Product Question</option>
+                                <option value="shipping">Shipping & Delivery</option>
+                                <option value="returns">Returns & Refunds</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            Send Message
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do you ship nationwide in the Philippines?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We ship to all major cities and provinces in the Philippines. Shipping fees vary by location, and we offer free shipping for orders over ₱1,500.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Are your products authentic?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! All our manga, manhwa, and manhua are authentic imports sourced directly from official distributors in Japan, Korea, and China.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How long does shipping take?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Metro Manila: 1-2 business days<br>
+                        Luzon: 2-4 business days<br>
+                        Visayas & Mindanao: 3-7 business days</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept GCash, PayMaya, credit/debit cards, bank transfers, and cash on delivery (COD) for eligible areas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I return or exchange items?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we accept returns within 7 days of delivery for damaged or incorrect items. Items must be in original condition. Please contact our support team first.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Same as other pages) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Manga</a></li>
+                        <li><a href="#">Manhwa</a></li>
+                        <li><a href="#">Manhua</a></li>
+                        <li><a href="#">Light Novels</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">📘 Facebook</a></li>
+                        <li><a href="#">📷 Instagram</a></li>
+                        <li><a href="#">🐦 Twitter</a></li>
+                        <li><a href="#">📺 YouTube</a></li>
+                        <li><a href="#">📧 Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BuyMangaPH. All rights reserved. | Made with ❤️ for manga lovers in the Philippines</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const toggle = element.querySelector('.faq-toggle');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').style.maxHeight = '0';
+                    item.querySelector('.faq-toggle').textContent = '+';
+                }
+            });
+            
+            // Toggle current FAQ
+            if (faqItem.classList.contains('active')) {
+                faqItem.classList.remove('active');
+                answer.style.maxHeight = '0';
+                toggle.textContent = '+';
+            } else {
+                faqItem.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                toggle.textContent = '−';
+            }
+        }
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Simulate form submission
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert(`Thank you, ${name}! Your message has been sent. We'll get back to you within 24 hours.`);
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Mobile menu and other functionality (same as other pages)
+        function toggleMobileMenu() {
+            const nav = document.getElementById('mobileNav');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            nav.classList.toggle('mobile-active');
+            
+            if (nav.classList.contains('mobile-active')) {
+                toggle.innerHTML = '✕';
+                toggle.style.transform = 'rotate(90deg)';
+            } else {
+                toggle.innerHTML = '☰';
+                toggle.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Header scroll behavior
+        let lastScrollTop = 0;
+        let scrollThreshold = 130;
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const header = document.querySelector('.header');
+            
+            if (scrollTop > scrollThreshold) {
+                header.classList.add('header-scrolled');
+                
+                if (scrollTop > lastScrollTop && scrollTop > scrollThreshold * 2) {
+                    header.classList.add('header-hidden');
+                } else {
+                    header.classList.remove('header-hidden');
+                }
+            } else {
+                header.classList.remove('header-scrolled');
+                header.classList.remove('header-hidden');
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        // Search functionality
+        const searchBar = document.querySelector('.search-bar');
+        const searchBtn = document.querySelector('.search-btn');
+        
+        function performSearch() {
+            const query = searchBar.value.trim();
+            if (query) {
+                alert(`Searching for: "${query}"`);
+            }
+        }
+        
+        searchBtn.addEventListener('click', performSearch);
+        searchBar.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // User authentication buttons
+        document.querySelector('.user-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Opening login modal...');
+        });
+
+        // Cart button functionality
+        document.querySelector('.cart-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Opening shopping cart...');
+        });
+    </script>
+</body>
+</html>
