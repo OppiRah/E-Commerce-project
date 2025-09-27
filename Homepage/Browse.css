@@ -225,7 +225,7 @@
         
         .nav-item:hover, .nav-item.active {
             background: linear-gradient(45deg, #BB86FC, #03DAC6);
-            color: #000000;
+            color: #111111 !important;
             transform: translateY(-2px);
             text-decoration: none; /* Ensure no underline on hover */
         }
