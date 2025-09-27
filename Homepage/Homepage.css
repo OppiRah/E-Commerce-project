@@ -172,6 +172,7 @@
         
         /* MOBILE HAMBURGER MENU */
         .mobile-menu-toggle {
+            display: none;
             background: transparent;
             border: 2px solid #BB86FC;
             color: #BB86FC;
@@ -817,8 +818,7 @@
         @media (max-width: 768px) {
             /* Show hamburger menu on mobile */
             .mobile-menu-toggle {
-                display: flex ;
-
+                display: block ;
 
             }
             
