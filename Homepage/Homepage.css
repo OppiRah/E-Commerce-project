@@ -504,8 +504,8 @@ body::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100vw;  /* Extend beyond container */
-    right: -100vw; /* Extend beyond container */
+    left: -25vw;  /* Extend beyond container */
+    right: -25vw; /* Extend beyond container */
     bottom: 0;
     background-image: url('Images/Background/mangatexture.jpg');
     background-size: cover;
@@ -518,7 +518,7 @@ body::before {
 /* Different panel styles for different sections */
 .featured-section:nth-child(odd)::before {
     background-image: url('Images/Background/manga.jpg');
-    opacity: 0.02;
+    opacity: 0.03;
 }
 
 .featured-section:nth-child(even)::before {
