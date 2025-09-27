@@ -37,6 +37,8 @@
         
         .header-top {
             display: flex;
+            flex-direction: column;
+            gap: 15px;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
@@ -60,7 +62,9 @@
         /* SEARCH BAR */
         .search-container {
             flex: 1;
-            margin: 0 30px;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
             position: relative;
         }
         
