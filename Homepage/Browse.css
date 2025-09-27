@@ -219,13 +219,23 @@
             color: #FFFFFF;
             transition: all 0.3s ease;
             position: relative;
+            text-decoration: none; /* Remove underline */
+            display: inline-block; /* Keep inline for proper alignment */
         }
         
         .nav-item:hover, .nav-item.active {
             background: linear-gradient(45deg, #BB86FC, #03DAC6);
-            color: #121212;
+            color: #000000;
             transform: translateY(-2px);
+            text-decoration: none; /* Ensure no underline on hover */
         }
+        .nav-menu a {
+    text-decoration: none !important;
+}
+
+.nav-menu a:visited {
+    color: inherit;
+}
 
         /* BREADCRUMB NAVIGATION */
         .breadcrumb {
