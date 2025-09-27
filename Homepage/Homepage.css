@@ -809,6 +809,7 @@
             .header-top {
                 flex-direction: column;
                 gap: 15px;
+                margin-bottom: 15px;
                 position: relative;
             }
             
@@ -822,9 +823,11 @@
             
             /* Search bar goes below */
             .search-container {
-                margin: 0;
+                margin: 0 auto;
                 width: 100%;
-                order: 3;
+                max-width: 600px;
+                position: relative;
+                
             }
             
             /* Adjust user actions for mobile */
