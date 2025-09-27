@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Manga - BuyMangasPH</title>
+    <link rel="stylesheet" href="Browse.css"></link>
+    </head>
+<body>
+    <!-- HEADER SECTION -->
+    <header class="header">
+        <div class="container">
+            <!-- Top header with logo, search, and user actions -->
+            <div class="header-top">
+                <div class="header-top-row">
+                    <a href="index.html" class="logo">BuyMangasPH</a>
+                    
+                    <div class="user-actions">
+                        <a href="#" class="user-btn">
+                            👤 Login
+                        </a>
+                        <a href="#" class="cart-btn">
+                            🛒 Cart <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="search-container">
+                    <button class="search-btn">🔍</button>
+                    <input type="text" class="search-bar" placeholder="Search for manga, manhwa, manhua...">
+                </div>
+            </div>
+
+            <!-- Mobile hamburger menu -->
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                ☰
+            </button>
+
+            <!-- Navigation Menu -->
+            <nav class="navigation" id="mobileNav">
+                <ul class="nav-menu">
+                    <li class="nav-item">Home</li>
+                    <li class="nav-item active">Browse</li>
+                    <li class="nav-item">Genres</li>
+                    <li class="nav-item">Sale</li>
+                    <li class="nav-item">About</li>
+                    <li class="nav-item">Contact</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <ul class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-separator">></li>
+                <li class="breadcrumb-item active" id="currentCategory">Browse All</li>
+            </ul>
+        </nav>
+
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-content">
+                <h1 class="page-title" id="pageTitle">Browse All Manga</h1>
+                <p class="page-subtitle" id="pageSubtitle">Discover your next favorite series from our extensive collection</p>
+            </div>
+        </section>
+
+        <!-- Browse Controls -->
+        <section class="browse-controls">
+            <div class="controls-row">
+                <div class="filter-group">
+                    <label class="filter-label">Category:</label>
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="manga">Manga</option>
+                        <option value="manhwa">Manhwa</option>
+                        <option value="manhua">Manhua</option>
+                    </select>
+
+                    <label class="filter-label">Genre:</label>
+                    <select class="filter-select" id="genreFilter">
+                        <option value="all">All Genres</option>
+                        <option value="action">Action</option>
+                        <option value="adventure">Adventure</option>
+                        <option value="comedy">Comedy</option>
+                        <option value="drama">Drama</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="romance">Romance</option>
+                        <option value="horror">Horror</option>
+                        <option value="mystery">Mystery</option>
+                    </select>
+
+                    <label class="filter-label">Sort by:</label>
+                    <select class="filter-select" id="sortFilter">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+
+                <div class="view-toggle">
+                    <button class="view-btn active" id="gridView" data-view="grid">⊞</button>
+                    <button class="view-btn" id="listView" data-view="list">☰</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Info -->
+        <section class="results-info">
+            <div class="results-count">
+                Showing <strong id="currentResults">1-20</strong> of <strong id="totalResults">156</strong> results
+            </div>
+        </section>
+
+        <!-- Products Container -->
+        <section class="products-container">
+            <div class="product-grid" id="productGrid">
+                <!-- Sample Products -->
+                <div class="product-card" data-category="manga" data-genre="action" data-price="650">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manga/AttackOnTitan34.jpg" alt="Attack on Titan Volume 34" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Attack on Titan Vol. 34</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manga</div>
+                        <h3 class="product-title">Attack on Titan Volume 34</h3>
+                        <div class="product-price">₱650.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(127 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manga" data-genre="fantasy" data-price="720">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manga/MushokuTensei22.jpg" alt="Mushoku Tensei Volume 22" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Mushoku Tensei Vol. 22</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manga</div>
+                        <h3 class="product-title">Mushoku Tensei Volume 22</h3>
+                        <div class="product-price">₱720.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(89 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manga" data-genre="action" data-price="580">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manga/BlackClover36.jpg" alt="Black Clover Volume 36" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Black Clover Vol. 36</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manga</div>
+                        <h3 class="product-title">Black Clover Volume 36</h3>
+                        <div class="product-price">₱580.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(203 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manhwa" data-genre="action" data-price="695">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manhwa/Eleceed14.jpg" alt="Eleceed Volume 14" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Eleceed Vol. 14</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manhwa</div>
+                        <h3 class="product-title">Eleceed Volume 14</h3>
+                        <div class="product-price">₱695.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(156 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manhua" data-genre="fantasy" data-price="695">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manhua/TianGuanCiFu8.jpg" alt="Tian Guan Ci Fu Volume 8" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Tian Guan Ci Fu Vol. 8</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manhua</div>
+                        <h3 class="product-title">Tian Guan Ci Fu Volume 8</h3>
+                        <div class="product-price">₱695.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(156 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manga" data-genre="action" data-price="675">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manga/JujutsuKaisen18.jpg" alt="Jujutsu Kaisen Volume 18" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Jujutsu Kaisen Vol. 18</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manga</div>
+                        <h3 class="product-title">Jujutsu Kaisen Volume 18</h3>
+                        <div class="product-price">₱675.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(278 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manhwa" data-genre="romance" data-price="720">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manhwa/TrueBeauty12.jpg" alt="True Beauty Volume 12" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">True Beauty Vol. 12</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manhwa</div>
+                        <h3 class="product-title">True Beauty Volume 12</h3>
+                        <div class="product-price">₱720.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(312 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manga" data-genre="adventure" data-price="620">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manga/OnePiece105.jpg" alt="One Piece Volume 105" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">One Piece Vol. 105</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manga</div>
+                        <h3 class="product-title">One Piece Volume 105</h3>
+                        <div class="product-price">₱620.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(445 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manhua" data-genre="action" data-price="680">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manhua/BattleThroughHeavens15.jpg" alt="Battle Through the Heavens Volume 15" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Battle Through Heavens Vol. 15</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manhua</div>
+                        <h3 class="product-title">Battle Through the Heavens Volume 15</h3>
+                        <div class="product-price">₱680.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(198 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manhwa" data-genre="drama" data-price="750">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manhwa/SoloLeveling8.jpg" alt="Solo Leveling Volume 8" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Solo Leveling Vol. 8</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manhwa</div>
+                        <h3 class="product-title">Solo Leveling Volume 8</h3>
+                        <div class="product-price">₱750.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(567 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manga" data-genre="comedy" data-price="590">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manga/ChainsawMan11.jpg" alt="Chainsaw Man Volume 11" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">Chainsaw Man Vol. 11</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manga</div>
+                        <h3 class="product-title">Chainsaw Man Volume 11</h3>
+                        <div class="product-price">₱590.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(234 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="manhua" data-genre="romance" data-price="710">
+                    <div class="product-image">
+                        <img src="Images/Browse/Manhua/LaBendicion3.jpg" alt="La Bendicion Del Volume 3" onerror="this.style.display='none'; this.parentElement.querySelector('.placeholder-text').style.display='block';">
+                        <span class="placeholder-text" style="display: none;">La Bendicion Del Vol. 3</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Manhua</div>
+                        <h3 class="product-title">La Bendicion Del Volume 3</h3>
+                        <div class="product-price">₱710.00</div>
+                        <div class="product-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">(89 reviews)</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading" id="loadingState" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Loading more products...</p>
+            </div>
+        </section>
+
+        <!-- Pagination -->
+        <section class="pagination">
+            <button class="page-btn disabled" id="prevPage">← Previous</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">5</button>
+            <span class="page-btn">...</span>
+            <button class="page-btn">8</button>
+            <button class="page-btn" id="nextPage">Next →</button>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Manga</a></li>
+                        <li><a href="#">Manhwa</a></li>
+                        <li><a href="#">Manhua</a></li>
+                        <li><a href="#">Light Novels</a></li>
+                        <li><a href="#">Merchandise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">📘 Facebook</a></li>
+                        <li><a href="#">📷 Instagram</a></li>
+                        <li><a href="#">🐦 Twitter</a></li>
+                        <li><a href="#">📺 YouTube</a></li>
+                        <li><a href="#">📧 Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BuyMangaPH. All rights reserved. | Made with ❤️ for manga lovers in the Philippines</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // PAGE FUNCTIONALITY
+        class BrowsePage {
+            constructor() {
+                this.currentPage = 1;
+                this.itemsPerPage = 12;
+                this.currentView = 'grid';
+                this.allProducts = [];
+                this.filteredProducts = [];
+                
+                this.init();
+            }
+            
+            init() {
+                this.setupEventListeners();
+                this.loadProducts();
+                this.updateURL();
+            }
+            
+            setupEventListeners() {
+                // Filter change events
+                document.getElementById('categoryFilter').addEventListener('change', () => this.applyFilters());
+                document.getElementById('genreFilter').addEventListener('change', () => this.applyFilters());
+                document.getElementById('sortFilter').addEventListener('change', () => this.applyFilters());
+                
+                // View toggle
+                document.getElementById('gridView').addEventListener('click', () => this.setView('grid'));
+                document.getElementById('listView').addEventListener('click', () => this.setView('list'));
+                
+                // Search functionality
+                const searchBar = document.querySelector('.search-bar');
+                const searchBtn = document.querySelector('.search-btn');
+                
+                searchBtn.addEventListener('click', () => this.performSearch());
+                searchBar.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        this.performSearch();
+                    }
+                });
+                
+                // Cart functionality
+                this.setupCartListeners();
+                
+                // Mobile menu
+                this.setupMobileMenu();
+            }
+            
+            loadProducts() {
+                // Get products from DOM (in real app, this would be an API call)
+                this.allProducts = Array.from(document.querySelectorAll('.product-card')).map(card => {
+                    return {
+                        element: card,
+                        category: card.dataset.category,
+                        genre: card.dataset.genre,
+                        price: parseFloat(card.dataset.price),
+                        title: card.querySelector('.product-title').textContent,
+                        rating: card.querySelector('.stars').textContent.length // Count stars
+                    };
+                });
+                
+                this.filteredProducts = [...this.allProducts];
+                this.updateResultsInfo();
+            }
+            
+            applyFilters() {
+                const categoryFilter = document.getElementById('categoryFilter').value;
+                const genreFilter = document.getElementById('genreFilter').value;
+                const sortFilter = document.getElementById('sortFilter').value;
+                
+                // Filter products
+                this.filteredProducts = this.allProducts.filter(product => {
+                    const categoryMatch = categoryFilter === 'all' || product.category === categoryFilter;
+                    const genreMatch = genreFilter === 'all' || product.genre === genreFilter;
+                    return categoryMatch && genreMatch;
+                });
+                
+                // Sort products
+                this.sortProducts(sortFilter);
+                
+                // Update display
+                this.displayProducts();
+                this.updateResultsInfo();
+                this.updatePageTitle();
+                this.currentPage = 1;
+            }
+            
+            sortProducts(sortType) {
+                switch (sortType) {
+                    case 'price-low':
+                        this.filteredProducts.sort((a, b) => a.price - b.price);
+                        break;
+                    case 'price-high':
+                        this.filteredProducts.sort((a, b) => b.price - a.price);
+                        break;
+                    case 'rating':
+                        this.filteredProducts.sort((a, b) => b.rating - a.rating);
+                        break;
+                    case 'popular':
+                        // Sort by number of reviews (extracted from rating text)
+                        this.filteredProducts.sort((a, b) => {
+                            const aReviews = parseInt(a.element.querySelector('.rating-text').textContent.match(/\d+/)[0]);
+                            const bReviews = parseInt(b.element.querySelector('.rating-text').textContent.match(/\d+/)[0]);
+                            return bReviews - aReviews;
+                        });
+                        break;
+                    default: // newest
+                        // Keep original order for newest
+                        break;
+                }
+            }
+            
+            displayProducts() {
+                const grid = document.getElementById('productGrid');
+                
+                // Show loading
+                document.getElementById('loadingState').style.display = 'block';
+                
+                setTimeout(() => {
+                    // Clear current products
+                    grid.innerHTML = '';
+                    
+                    // Add filtered products
+                    this.filteredProducts.forEach(product => {
+                        const clonedElement = product.element.cloneNode(true);
+                        
+                        // Apply view class if needed
+                        if (this.currentView === 'list') {
+                            clonedElement.classList.add('list-item');
+                        } else {
+                            clonedElement.classList.remove('list-item');
+                        }
+                        
+                        grid.appendChild(clonedElement);
+                    });
+                    
+                    // Re-setup cart listeners for new elements
+                    this.setupCartListeners();
+                    
+                    // Hide loading
+                    document.getElementById('loadingState').style.display = 'none';
+                    
+                    // Animate in
+                    grid.querySelectorAll('.product-card').forEach((card, index) => {
+                        card.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1}s both`;
+                    });
+                }, 500);
+            }
+            
+            setView(viewType) {
+                this.currentView = viewType;
+                const grid = document.getElementById('productGrid');
+                const gridBtn = document.getElementById('gridView');
+                const listBtn = document.getElementById('listView');
+                
+                if (viewType === 'list') {
+                    grid.classList.add('list-view');
+                    grid.querySelectorAll('.product-card').forEach(card => {
+                        card.classList.add('list-item');
+                    });
+                    listBtn.classList.add('active');
+                    gridBtn.classList.remove('active');
+                } else {
+                    grid.classList.remove('list-view');
+                    grid.querySelectorAll('.product-card').forEach(card => {
+                        card.classList.remove('list-item');
+                    });
+                    gridBtn.classList.add('active');
+                    listBtn.classList.remove('active');
+                }
+            }
+            
+            updateResultsInfo() {
+                const total = this.filteredProducts.length;
+                const start = (this.currentPage - 1) * this.itemsPerPage + 1;
+                const end = Math.min(this.currentPage * this.itemsPerPage, total);
+                
+                document.getElementById('currentResults').textContent = `${start}-${end}`;
+                document.getElementById('totalResults').textContent = total;
+            }
+            
+            updatePageTitle() {
+                const categoryFilter = document.getElementById('categoryFilter').value;
+                const pageTitle = document.getElementById('pageTitle');
+                const pageSubtitle = document.getElementById('pageSubtitle');
+                const breadcrumb = document.getElementById('currentCategory');
+                
+                let title, subtitle, breadcrumbText;
+                
+                switch (categoryFilter) {
+                    case 'manga':
+                        title = 'Browse Manga';
+                        subtitle = 'Discover Japanese comics with incredible storylines';
+                        breadcrumbText = 'Manga';
+                        break;
+                    case 'manhwa':
+                        title = 'Browse Manhwa';
+                        subtitle = 'Explore Korean webtoons with stunning full-color art';
+                        breadcrumbText = 'Manhwa';
+                        break;
+                    case 'manhua':
+                        title = 'Browse Manhua';
+                        subtitle = 'Experience Chinese comics with epic adventures';
+                        breadcrumbText = 'Manhua';
+                        break;
+                    default:
+                        title = 'Browse All Manga';
+                        subtitle = 'Discover your next favorite series from our extensive collection';
+                        breadcrumbText = 'Browse All';
+                }
+                
+                pageTitle.textContent = title;
+                pageSubtitle.textContent = subtitle;
+                breadcrumb.textContent = breadcrumbText;
+                document.title = `${title} - BuyMangasPH`;
+            }
+            
+            performSearch() {
+                const query = document.querySelector('.search-bar').value.trim();
+                if (query) {
+                    // Filter products by search query
+                    this.filteredProducts = this.allProducts.filter(product => {
+                        return product.title.toLowerCase().includes(query.toLowerCase()) ||
+                               product.category.toLowerCase().includes(query.toLowerCase()) ||
+                               product.genre.toLowerCase().includes(query.toLowerCase());
+                    });
+                    
+                    this.displayProducts();
+                    this.updateResultsInfo();
+                    
+                    // Update page title for search
+                    document.getElementById('pageTitle').textContent = `Search Results for "${query}"`;
+                    document.getElementById('pageSubtitle').textContent = `Found ${this.filteredProducts.length} results`;
+                    document.getElementById('currentCategory').textContent = `Search: ${query}`;
+                }
+            }
+            
+            setupCartListeners() {
+                let cartCount = 0;
+                const cartCountElement = document.querySelector('.cart-count');
+                
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    // Remove existing listeners
+                    button.replaceWith(button.cloneNode(true));
+                });
+                
+                document.querySelectorAll('.add-to-cart').forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        cartCount++;
+                        cartCountElement.textContent = cartCount;
+                        
+                        // Visual feedback
+                        button.style.transform = 'scale(0.95)';
+                        button.textContent = 'Added!';
+                        button.style.background = '#28a745';
+                        
+                        // Reset button after 1 second
+                        setTimeout(() => {
+                            button.style.transform = 'scale(1)';
+                            button.textContent = 'Add to Cart';
+                            button.style.background = 'linear-gradient(45deg, #BB86FC, #03DAC6)';
+                        }, 1000);
+                    });
+                });
+            }
+            
+            setupMobileMenu() {
+                // Mobile menu functionality (copied from homepage)
+                window.toggleMobileMenu = function() {
+                    const nav = document.getElementById('mobileNav');
+                    const toggle = document.querySelector('.mobile-menu-toggle');
+                    
+                    nav.classList.toggle('mobile-active');
+                    
+                    if (nav.classList.contains('mobile-active')) {
+                        toggle.innerHTML = '✕';
+                        toggle.style.transform = 'rotate(90deg)';
+                    } else {
+                        toggle.innerHTML = '☰';
+                        toggle.style.transform = 'rotate(0deg)';
+                    }
+                };
+                
+                // Close mobile menu when clicking on a nav item
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.addEventListener('click', function() {
+                        if (window.innerWidth <= 768) {
+                            toggleMobileMenu();
+                        }
+                        
+                        document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+                        this.classList.add('active');
+                    });
+                });
+            }
+            
+            updateURL() {
+                // Update browser URL to reflect current filters (for bookmarking/sharing)
+                const params = new URLSearchParams();
+                const categoryFilter = document.getElementById('categoryFilter').value;
+                const genreFilter = document.getElementById('genreFilter').value;
+                const sortFilter = document.getElementById('sortFilter').value;
+                
+                if (categoryFilter !== 'all') params.set('category', categoryFilter);
+                if (genreFilter !== 'all') params.set('genre', genreFilter);
+                if (sortFilter !== 'newest') params.set('sort', sortFilter);
+                if (this.currentView !== 'grid') params.set('view', this.currentView);
+                
+                const newURL = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+                window.history.replaceState({}, '', newURL);
+            }
+        }
+        
+        // Header scroll behavior (copied from homepage)
+        let lastScrollTop = 0;
+        let scrollThreshold = 130;
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const header = document.querySelector('.header');
+            
+            if (scrollTop > scrollThreshold) {
+                header.classList.add('header-scrolled');
+                
+                if (scrollTop > lastScrollTop && scrollTop > scrollThreshold * 2) {
+                    header.classList.add('header-hidden');
+                } else {
+                    header.classList.remove('header-hidden');
+                }
+            } else {
+                header.classList.remove('header-scrolled');
+                header.classList.remove('header-hidden');
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+        
+        // Product card click functionality
+        document.addEventListener('click', function(e) {
+            const productCard = e.target.closest('.product-card');
+            if (productCard && !e.target.classList.contains('add-to-cart')) {
+                const title = productCard.querySelector('.product-title').textContent;
+                alert(`Opening ${title} details...`);
+                // In real implementation: window.location.href = `/product/${productId}`;
+            }
+        });
+        
+        // User authentication buttons
+        document.querySelector('.user-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Opening login modal...');
+        });
+        
+        // Cart button functionality
+        document.querySelector('.cart-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Opening shopping cart...');
+        });
+        
+        // Logo click functionality
+        document.querySelector('.logo').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'index.html';
+        });
+        
+        // Initialize page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            new BrowsePage();
+            
+            // Check URL parameters and set initial filters
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            if (urlParams.get('category')) {
+                document.getElementById('categoryFilter').value = urlParams.get('category');
+            }
+            if (urlParams.get('genre')) {
+                document.getElementById('genreFilter').value = urlParams.get('genre');
+            }
+            if (urlParams.get('sort')) {
+                document.getElementById('sortFilter').value = urlParams.get('sort');
+            }
+            if (urlParams.get('view')) {
+                const viewType = urlParams.get('view');
+                if (viewType === 'list') {
+                    document.getElementById('listView').click();
+                }
+            }
+            
+            // Apply initial filters if any
+            if (urlParams.toString()) {
+                const browsePage = new BrowsePage();
+                browsePage.applyFilters();
+            }
+        });
+    </script>
+</body>
+</html>
