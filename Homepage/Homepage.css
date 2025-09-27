@@ -140,7 +140,7 @@
             border: 2px solid #BB86FC;
             background: transparent;
             color: #BB86FC;
-            border-radius: 25px;
+            border-radius: 10px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -173,6 +173,7 @@
         /* MOBILE HAMBURGER MENU */
         .mobile-menu-toggle {
             display: none;
+            justify-content: center;
             background: transparent;
             border: 2px solid #BB86FC;
             color: #BB86FC;
@@ -181,7 +182,7 @@
             cursor: pointer;
             font-size: 15px;
             transition: all 0.3s ease;
-            justify-content: center;
+           
         }
         
         .mobile-menu-toggle:hover {
