@@ -172,6 +172,8 @@
         
         /* MOBILE HAMBURGER MENU */
         .mobile-menu-toggle {
+            display: flex;
+            justify-content: space-between;
             background: transparent;
             border: 2px solid #BB86FC;
             color: #BB86FC;
