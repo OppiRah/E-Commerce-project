@@ -37,11 +37,11 @@
             transition: all 0.3s ease-in-out;
         }
 
-        .header .header-hidden {
+        .header.header-hidden {
             transform: translateY(-100%);
         }
 
-        .header .header-scrolled {
+        .header.header-scrolled {
             background: rgba(31, 27, 36, 0.98);
             box-shadow: 0 8px 32px rgba(187, 134, 252, 0.3);
         }
