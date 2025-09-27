@@ -7,7 +7,23 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+        /* Full-width background for the entire body/page */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('Images/Background/panel-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.02;
+    z-index: -10;
+    pointer-events: none;
+}
+
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
@@ -483,18 +499,18 @@
     position: relative;
 }
 
+
 .featured-section::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    left: -100vw;  /* Extend beyond container */
+    right: -100vw; /* Extend beyond container */
     bottom: 0;
     background-image: url('Images/Background/mangatexture.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.03;
+    opacity: 0.015;
     z-index: -1;
     pointer-events: none;
 }
