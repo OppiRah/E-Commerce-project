@@ -501,12 +501,12 @@
 
 /* Different panel styles for different sections */
 .featured-section:nth-child(odd)::before {
-    background-image: url('Images/Background/manga-panels-light.jpg');
+    background-image: url('Images/Background/manga.jpg');
     opacity: 0.02;
 }
 
 .featured-section:nth-child(even)::before {
-    background-image: url('Images/Background/manga-panels-dark.jpg');
+    background-image: url('Images/Background/manhwa.jpg');
     opacity: 0.025;
 }
 
@@ -872,7 +872,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('Images/Background/comic-texture.jpg');
+    background-image: url('Images/Background/manga.jpg');
     background-size: cover;
     opacity: 0.02;
     z-index: -1;
