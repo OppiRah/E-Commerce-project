@@ -518,12 +518,12 @@ body::before {
 /* Different panel styles for different sections */
 .featured-section:nth-child(odd)::before {
     background-image: url('Images/Background/manga.jpg');
-    opacity: 0.03;
+    opacity: 0.04;
 }
 
 .featured-section:nth-child(even)::before {
     background-image: url('Images/Background/manhwa.jpg');
-    opacity: 0.025;
+    opacity: 0.04;
 }
 
 /* Subtle halftone pattern for product grids */
