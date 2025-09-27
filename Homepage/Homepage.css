@@ -476,6 +476,58 @@
             background: linear-gradient(45deg, #BB86FC, #03DAC6);
             border-radius: 2px;
         }
+
+        /* bg manga panels for feature category sec*/
+        /* Subtle manga panel texture for main sections */
+.featured-section {
+    position: relative;
+}
+
+.featured-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('Images/Background/panel-texture.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.03;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Different panel styles for different sections */
+.featured-section:nth-child(odd)::before {
+    background-image: url('Images/Background/manga-panels-light.jpg');
+    opacity: 0.02;
+}
+
+.featured-section:nth-child(even)::before {
+    background-image: url('Images/Background/manga-panels-dark.jpg');
+    opacity: 0.025;
+}
+
+/* Subtle halftone pattern for product grids */
+.product-grid {
+    position: relative;
+}
+
+.product-grid::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background-image: url('Images/Background/halftone-pattern.jpg');
+    background-size: 400px 400px;
+    opacity: 0.01;
+    z-index: -1;
+    pointer-events: none;
+}
         
         /* FEATURED CATEGORIES */
         .categories-grid {
@@ -813,6 +865,18 @@
             border-top: 2px solid rgba(187, 134, 252, 0.2);
             color: #8D99AE;
         }
+        .footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('Images/Background/comic-texture.jpg');
+    background-size: cover;
+    opacity: 0.02;
+    z-index: -1;
+}
         
         /* RESPONSIVE DESIGN - MOBILE FIXES */
         @media (max-width: 768px) {
